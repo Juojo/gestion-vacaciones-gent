@@ -1,9 +1,6 @@
-drop DATABASE if EXISTS
-
-use DATABASE Gestion_Vacaciones
-
+drop DATABASE if EXISTS Gestion_Vacaciones;
 create database Gestion_Vacaciones;
-
+use Gestion_Vacaciones
 
 create table empleados
 (
@@ -15,3 +12,5 @@ direccion varchar(25),
 localidad varchar(25),
  PRIMARY KEY(id_empleado)
  );
+
+insert into empleados values (1, "Juan", "M", 100000, "mi casa", "mi localidad");
