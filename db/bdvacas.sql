@@ -1,4 +1,11 @@
+<<<<<<< Updated upstream
 drop DATABASE if EXISTS Gestion_Vacaciones;
+=======
+drop DATABASE if EXISTS
+
+use Gestion_Vacaciones
+
+>>>>>>> Stashed changes
 create database Gestion_Vacaciones;
 use Gestion_Vacaciones
 
@@ -10,7 +17,32 @@ Apellido varchar(50),
 Telefono int(10),
 direccion varchar(25),
 localidad varchar(25),
+fechaing DATE,
+area VARCHAR(50),
  PRIMARY KEY(id_empleado)
  );
+<<<<<<< Updated upstream
 
 insert into empleados values (1, "Juan", "M", 100000, "mi casa", "mi localidad");
+=======
+ 
+ create table jefe
+ (
+ Id_Jefe int,
+ Id_Empleado int,
+ PRIMARY KEY(Id_Jefe),
+ FOREIGN KEY (Id_Empleado) REFERENCES empleados (Id_Empleado)
+ );
+ 
+ 
+ create table vacaciones
+ (
+ Id_Vacacion int,
+ Estado boolean DEFAULT FALSE,
+ FechaI date,
+ FechaF date,
+ Id_Empleado int,
+ PRIMARY KEY (Id_jefe),
+ FOREIGN KEY (Id_Empleado) REFERENCES empleados (Id_Empleado)
+ );
+>>>>>>> Stashed changes
