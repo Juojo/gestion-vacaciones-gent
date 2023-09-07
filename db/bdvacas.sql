@@ -4,18 +4,18 @@ use Gestion_Vacaciones
 
 create table empleados
 (
-usuario varchar(50),
-Nombre varchar(50),
-Apellido varchar(50),
-Telefono int(10),
+dni int,
+nombre varchar(50),
+apellido varchar(50),
+telefono int(10),
 direccion varchar(25),
 localidad varchar(25),
 fechaing DATE,
 area VARCHAR(50),
- PRIMARY KEY(id_empleado)
+ PRIMARY KEY(dni)
  );
 
-insert into empleados values (1, "Juan", "M", 100000, "mi casa", "mi localidad");
+insert into empleados values (1, "Juan", "M", 100000, "mi casa", "mi localidad", "01/01/2000", "a");
  
 create table jefe
 (
