@@ -1,13 +1,20 @@
-const mysql = require('mysql2');
-const config = require('./db/config')
-const connection = mysql.createConnection(config);
+const http = require('http');
+const fs = require('fs');
 
-connection.query(
-    'SELECT * FROM empleados',
-    function(err, results) {
-        if (err) {
-            console.log('Error: ', err);
-        }
-        console.log(results[0].Nombre);
+const server = http.createServer((req, res) => {
+    if (req.url === '/') {
+        fs.readFile('../index.html', (err, data) => {
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+            } else {
+                res.writeHead(200, { 'Content-Type': 'text/html' });
+                res.end(data);
+            }
+        });
     }
-  );
+});
+
+const port = 4000;
+server.listen(port, () => {
+    console.log(`El servidor esta escuchando en el puerto ${port}`);
+})

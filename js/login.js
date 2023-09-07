@@ -7,63 +7,59 @@ let formularioRegister = document.getElementById(formularioRegister);
 formularioRegister.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    var nombre = document.getElementById(usuario)
-    var contrasena = document.getElementById(contrasena)
+    let nombre = document.getElementById(usuario)
+    let contrasena = document.getElementById(contrasena)
     
     if (username.value == "" || password.value == "") {
         alert("Complete todos los campos obligatorios")
       } else {
-        buscarEmpleado("nombre");
-        buscarEmpleado("pw");
+        if(buscarNombreEmpleado(nombre)) {
+            console.log("El nombre se encuentra cargado en la db");
+        } else {
+            console.log("No se encontro el nombre");
+        }
+        //buscarEmpleado("pw");
       }
   });
 
-function buscarEmpleado(campo) {
+function buscarNombreEmpleado(nom) {
     encotrado = false;
     
-    switch (resultado) {
-        case nombre:
-            connection.query(
-                `SELECT nombre FROM empleados where nombre ${nombre}`,
-                function(err, results) {
-                    if (err) {
-                        console.log('Error: ', err);
-                    }
-                    console.log(results[0].nombre);
-                }
-              );
-            break;
-            
-        case contrasena:
+    connection.query(
+        `SELECT nombre FROM empleados where nombre ${nombre}`,
+        function(err, results) {
+            if (err) {
+                console.log('Error: ', err);
+            }
+            console.log(results[0].nombre);
 
-            break;
-        default:
-            break;
-    }
+            if (results[0].nombre === nom) {
+                encontrado = true;
+            } else {
+                encontrado = false
+            }
+        }
+    );
 
     return encontrado;
 }
 
-const user = connection.query(
-    'SELECT nombre FROM empleados',
-    function(err, results) {
-        if (err) {
-            console.log('Error: ', err);
-        }
-        console.log(results[0].Nombre);
-    }
-  );
+// const user = connection.query(
+//     'SELECT nombre FROM empleados',
+//     function(err, results) {
+//         if (err) {
+//             console.log('Error: ', err);
+//         }
+//         console.log(results[0].Nombre);
+//     }
+//   );
 
-const contrasena = connection.query(
-    `SELECT * FROM empleados WHERE contrasena = ${inputC}`,
-    function(err, results) {
-        if (err) {
-            console.log('Error: ', err);
-        }
-        console.log(results[0].contrasena);
-    }
-  );
-
-if (inputU === user && inputC === contrasena) {
-    
-}
+// const contrasena = connection.query(
+//     `SELECT * FROM empleados WHERE contrasena = ${inputC}`,
+//     function(err, results) {
+//         if (err) {
+//             console.log('Error: ', err);
+//         }
+//         console.log(results[0].contrasena);
+//     }
+//   );
