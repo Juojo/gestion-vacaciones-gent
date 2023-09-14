@@ -1,24 +1,25 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
-import './css/App.css'
+import '../css/Home.css';
 
-const App = () =>{
-    return (
-        <div class="main-box">
+function Home() {
+  return (
+      
+      <div class="main-box">
         <h2>Gestion De Vacaciones</h2>
         <form>
           <div class="LogIn-box">
-              <a href="./paginas/LogIn.html">
+            <Link to="/login">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 Log In
-              </a>
+              </Link>
             
           </div>
           <div class="LogIn-box">
-            <a href="./paginas/SignUp.html">
+            <a href="./html/SignUp.html">
               <span></span>
               <span></span>
               <span></span>
@@ -28,9 +29,7 @@ const App = () =>{
           </div>
         </form>
       </div>
-    )
+  );
 }
 
-console.log("Holas");
-
-export default App
+export default Home;
