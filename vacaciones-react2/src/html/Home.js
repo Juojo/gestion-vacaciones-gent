@@ -19,13 +19,13 @@ function Home() {
             
           </div>
           <div class="LogIn-box">
-            <a href="./html/SignUp.html">
+            <Link to="/register">
               <span></span>
               <span></span>
               <span></span>
               <span></span>
               Sign Up
-            </a>
+            </Link>
           </div>
         </form>
       </div>
