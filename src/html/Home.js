@@ -9,7 +9,7 @@ function Home() {
         <h2>Gestion De Vacaciones</h2>
         <form>
           <div class="LogIn-box">
-            <Link to="/login">
+            <Link to="/gestion-vacaciones-gent/login">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -19,7 +19,7 @@ function Home() {
             
           </div>
           <div class="LogIn-box">
-            <Link to="/register">
+            <Link to="/gestion-vacaciones-gent/register">
               <span></span>
               <span></span>
               <span></span>

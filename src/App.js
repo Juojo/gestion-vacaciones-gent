@@ -9,12 +9,12 @@ function App() {
     <>
       <Router>      
         <Routes>
-          <Route path='/'>
-              <Route index element={<Home />} />
-              <Route path="login" element={<Login />} />
-              <Route path="register" element={<Register />} />
-              {/* <Route path="/login" component={Login} /> */}
-            </ Route>
+          <Route path='/gestion-vacaciones-gent'>
+            <Route index element={<Home />} />
+            <Route path="/gestion-vacaciones-gent/login" element={<Login />} />
+            <Route path="/gestion-vacaciones-gent/register" element={<Register />} />
+            {/* <Route path="/login" component={Login} /> */}
+          </ Route>
             <Route path='/*' element={<p>404</p>} />
         </Routes>
       </Router>
