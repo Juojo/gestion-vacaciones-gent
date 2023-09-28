@@ -4,7 +4,7 @@ import Home from './html/Home'
 import Login from './html/Login';
 import Register from './html/Register';
 
-function App() {
+function ReactApp() {
   return (
     <>
       <Router>      
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default ReactApp;

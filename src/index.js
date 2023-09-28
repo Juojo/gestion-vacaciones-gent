@@ -1,17 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactApp from './ReactApp';
+
+// class App extends Component {
+//   state = {
+//       data: null
+//     };
+  
+//     componentDidMount() {
+//       this.callBackendAPI()
+//         .then(res => this.setState({ data: res.express }))
+//         .catch(err => console.log(err));
+//     }
+//       // fetching the GET route from the Express server which matches the GET route from server.js
+//     callBackendAPI = async () => {
+//       const response = await fetch('/express_backend');
+//       const body = await response.json();
+  
+//       if (response.status !== 200) {
+//         throw Error(body.message) 
+//       }
+//       return body;
+//     };
+// }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ReactApp />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

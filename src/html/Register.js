@@ -1,8 +1,10 @@
+import '../css/Login.css';
+
+const express = require('express'); 
 const mysql = require('mysql2');
 const config = require('../db/config')
+const app = express(); 
 const connection = mysql.createConnection(config);
-
-import '../css/Login.css';
 
 function Register() {
 
@@ -22,16 +24,21 @@ function Register() {
     let area = document.getElementById(area);
     let fechaIngreso = document.getElementById(fechaIngreso);
     
-    connection.query(
-      `insert into empleados values (${dni}, ${nombre}, ${apellido}, ${contrasena}, ${telefono}, ${email}, ${direccion}, ${localidad}, ${fechaIngreso}, ${area});`,
-      function(err, results) {
-          if (err) {
-              console.log('Error: ', err);
-          } else {
-            console.log("El usuario con dni: " + dni + " se inserto correctamente en la base de datos.");
-          }
-      }
-    );
+    app.get('/data', (req, res) => { 
+      const query = `insert into empleados values (${dni}, ${nombre}, ${apellido}, ${contrasena}, ${telefono}, ${email}, ${direccion}, ${localidad}, ${fechaIngreso}, ${area});`; 
+     
+      connection.query(query,
+        function(err, results) {
+            if (err) {
+                console.log('Error: ', err);
+            } else {
+              console.log("El usuario con dni: " + dni + " se inserto correctamente en la base de datos.");
+            }
+        }
+      ); 
+    }); 
+
+    
   });
 
   return (
