@@ -1,45 +1,13 @@
 import '../css/Login.css';
 
-const express = require('express'); 
+// const express = require('express'); 
+// const app = express(); 
 const mysql = require('mysql2');
 const config = require('../db/config')
-const app = express(); 
-const connection = mysql.createConnection(config);
+
+// const connection = mysql.createConnection(config);
 
 function Register() {
-
-  let formularioRegister = document.getElementById(formularioRegister);
-
-  formularioRegister.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    let email = document.getElementById(email);
-    let dni = document.getElementById(dni);
-    let telefono = document.getElementById(telefono);
-    let nombre = document.getElementById(nombre);
-    let apellido = document.getElementById(apellido);
-    let direccion = document.getElementById(direccion);
-    let localidad = document.getElementById(localidad);
-    let contrasena = document.getElementById(contrasena);
-    let area = document.getElementById(area);
-    let fechaIngreso = document.getElementById(fechaIngreso);
-    
-    app.get('/data', (req, res) => { 
-      const query = `insert into empleados values (${dni}, ${nombre}, ${apellido}, ${contrasena}, ${telefono}, ${email}, ${direccion}, ${localidad}, ${fechaIngreso}, ${area});`; 
-     
-      connection.query(query,
-        function(err, results) {
-            if (err) {
-                console.log('Error: ', err);
-            } else {
-              console.log("El usuario con dni: " + dni + " se inserto correctamente en la base de datos.");
-            }
-        }
-      ); 
-    }); 
-
-    
-  });
 
   return (
       <form action="/action_page.php" style={{border: "1px" || "solid" || "#ccc"}}>
@@ -92,6 +60,50 @@ function Register() {
             </div>
     </form>
   );
+
+  let formularioRegister = document.getElementById(formularioRegister);
+
+  formularioRegister.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    
+    // let email = document.getElementById(email);
+    // let dni = document.getElementById(dni);
+    // let telefono = document.getElementById(telefono);
+    // let nombre = document.getElementById(nombre);
+    // let apellido = document.getElementById(apellido);
+    // let direccion = document.getElementById(direccion);
+    // let localidad = document.getElementById(localidad);
+    // let contrasena = document.getElementById(contrasena);
+    // let area = document.getElementById(area);
+    // let fechaIngreso = document.getElementById(fechaIngreso);
+
+    const datosAEnviar = {
+      email: document.getElementById('email').value,
+      dni: document.getElementById('dni').value,
+      telefono: document.getElementById('telefono').value,
+      nombre: document.getElementById('nombre').value,
+      apellido: document.getElementById('apellido').value,
+      direccion: document.getElementById('direccion').value,
+      localidad: document.getElementById('localidad').value,
+      contrasena: document.getElementById('contrasena').value,
+      area: document.getElementById('area').value,
+      fechaIngreso: document.getElementById('fechaIngreso').value,
+    };
+
+    fetch('/api/selectBD')
+      .then((response) => response.json())
+      .then((data) => {
+        // Manejar los datos recibidos desde el servidor
+        console.log(data);
+      })
+      .catch((error) => {
+        // Manejar errores de solicitud
+        console.error(error);
+      });
+
+    
+  });
 }
 
 export default Register;

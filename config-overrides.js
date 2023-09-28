@@ -1,7 +1,14 @@
-const NodePolyfillPlugin = require('node-polyfill-webpack-plugin')
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 module.exports = function override(config, env) {
+  // Agregar el plugin de NodePolyfill para proporcionar polyfills de Node.js en el lado del cliente
+  config.plugins.push(new NodePolyfillPlugin());
 
-  config.plugins.push(new NodePolyfillPlugin())
-  return config
-}
+  // Configurar Webpack para que 'fs' sea 'empty'
+  console.log("React app rewired works!")
+    config.resolve.fallback = {
+        fs: false
+  };
+
+  return config;
+};
