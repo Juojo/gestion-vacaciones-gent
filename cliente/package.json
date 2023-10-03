@@ -1,0 +1,55 @@
+{
+  "homepage": "https://Juojo.github.io/gestion-vacaciones-gent",
+  "name": "cliente-vacaciones-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "gh-pages": "^6.0.0",
+    "net": "^1.0.2",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "react": "^18.2.0",
+    "react-app-rewired": "^2.2.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0",
+    "react-scripts": "^5.0.1",
+    "tls": "^0.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "browser": {
+    "fs": "require('fs')"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:5000",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Juojo/gestion-vacaciones-gent.git"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
