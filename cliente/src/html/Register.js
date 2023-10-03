@@ -1,16 +1,71 @@
 import '../css/Login.css';
 
-// const express = require('express'); 
-// const app = express(); 
-const mysql = require('mysql2');
-const config = require('../db/config')
-
-// const connection = mysql.createConnection(config);
+const axios = require('axios').default;
 
 function Register() {
+  document.addEventListener("DOMContentLoaded", function () {
+    let submitB = document.getElementById('submitB');
+
+    submitB.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      
+      // let email = document.getElementById(email);
+      // let dni = document.getElementById(dni);
+      // let telefono = document.getElementById(telefono);
+      // let nombre = document.getElementById(nombre);
+      // let apellido = document.getElementById(apellido);
+      // let direccion = document.getElementById(direccion);
+      // let localidad = document.getElementById(localidad);
+      // let contrasena = document.getElementById(contrasena);
+      // let area = document.getElementById(area);
+      // let fechaIngreso = document.getElementById(fechaIngreso);
+
+      const datosAEnviar = {
+        email: document.getElementById('email').value,
+        dni: document.getElementById('dni').value,
+        telefono: document.getElementById('telefono').value,
+        nombre: document.getElementById('nombre').value,
+        apellido: document.getElementById('apellido').value,
+        direccion: document.getElementById('direccion').value,
+        localidad: document.getElementById('localidad').value,
+        contrasena: document.getElementById('contrasena').value,
+        area: document.getElementById('area').value,
+        fechaIngreso: document.getElementById('fechaIngreso').value,
+      };
+
+      // Realizar una solicitud POST al servidor
+        // fetch('/api/enviarDatos', {
+        //   method: 'POST',
+        //   headers: {
+        //     'Content-Type': 'application/json',
+        //   },
+        //   body: JSON.stringify(datosAEnviar),
+        // })
+        //   .then((response) => response.json())
+        //   .then((data) => {
+        //     console.log(data); // Manejar la respuesta del servidor aquí
+        //   })
+        //   .catch((error) => {
+        //     console.error('Error:', error);
+        //   });
+      
+      axios.post('/api/enviarDatos', {
+        dni: document.getElementById('dni').value,
+        lastName: 'Flintstone'
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    });
+  });
 
   return (
-      <form action="/action_page.php" style={{border: "1px" || "solid" || "#ccc"}}>
+      <form id="formularioRegister" action="/action_page.php" style={{border: "1px" || "solid" || "#ccc"}}>
             <div className="container">
               <h1>Sign Up</h1>
               <hr />
@@ -54,56 +109,12 @@ function Register() {
           
               <div class="clearfix">
                 <button type="button" class="cancelbtn">Cancelar</button>
-                <button type="submit" class="signupbtn">Registrarse</button>
+                <button id="submitB" type="submit" class="signupbtn">Registrarse</button>
               </div>
 
             </div>
     </form>
   );
-
-  let formularioRegister = document.getElementById(formularioRegister);
-
-  formularioRegister.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    
-    // let email = document.getElementById(email);
-    // let dni = document.getElementById(dni);
-    // let telefono = document.getElementById(telefono);
-    // let nombre = document.getElementById(nombre);
-    // let apellido = document.getElementById(apellido);
-    // let direccion = document.getElementById(direccion);
-    // let localidad = document.getElementById(localidad);
-    // let contrasena = document.getElementById(contrasena);
-    // let area = document.getElementById(area);
-    // let fechaIngreso = document.getElementById(fechaIngreso);
-
-    const datosAEnviar = {
-      email: document.getElementById('email').value,
-      dni: document.getElementById('dni').value,
-      telefono: document.getElementById('telefono').value,
-      nombre: document.getElementById('nombre').value,
-      apellido: document.getElementById('apellido').value,
-      direccion: document.getElementById('direccion').value,
-      localidad: document.getElementById('localidad').value,
-      contrasena: document.getElementById('contrasena').value,
-      area: document.getElementById('area').value,
-      fechaIngreso: document.getElementById('fechaIngreso').value,
-    };
-
-    fetch('/api/selectBD')
-      .then((response) => response.json())
-      .then((data) => {
-        // Manejar los datos recibidos desde el servidor
-        console.log(data);
-      })
-      .catch((error) => {
-        // Manejar errores de solicitud
-        console.error(error);
-      });
-
-    
-  });
 }
 
 export default Register;
