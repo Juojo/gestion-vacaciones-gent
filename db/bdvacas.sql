@@ -17,7 +17,8 @@ area VARCHAR(50),
  PRIMARY KEY(dni)
  );
 
-insert into empleados values (1, "Juan", "M", 123, 100000, "mail", "mi dire", "mi localidad", 2023-01-01, "area");
+insert into empleados values (0, "Juan", "M", 123, 100000, "mail", "mi dire", "mi localidad", 2023-01-01, "area");
+
  
 create table jefe
 (
