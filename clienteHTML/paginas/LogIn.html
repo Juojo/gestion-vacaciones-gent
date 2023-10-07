@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./css/login.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form id="login-form"> <!-- Agregamos un ID al formulario -->
+        <div class="container">
+            <h1>Log In</h1>
+            <hr>
+
+            <label for="dni"><b>DNI</b></label>
+            <input type="number" placeholder="Documento" id="dni" required> <!-- Agregamos un ID al campo DNI -->
+
+            <label for="psw"><b>Contraseña</b></label>
+            <input type="password" placeholder="Contraseña" id="password" required> <!-- Agregamos un ID al campo Contraseña -->
+
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom: 15px"> Recordarme
+            </label>
+
+            <div class="clearfix">
+                <a href="../index.html">
+                    <button type="button" class="cancelbtn">Cancelar</button>
+                </a>
+                <button type="submit" class="signupbtn">Ingresar</button> <!-- Cambiamos a tipo "submit" para enviar el formulario -->
+            </div>
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/scriptLogin.js"></script>
+</body>
+</html>

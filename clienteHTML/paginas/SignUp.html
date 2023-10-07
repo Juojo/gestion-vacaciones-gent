@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="./css/login.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+</head>
+<body>
+  <form action="/api/crearUsuario" style="border:1px solid #ccc">
+    <div id="data-container" class="container">
+      <h1>Sign Up</h1>
+      <hr>
+
+      <label for="email"><b>Email</b></label>
+      <input id="email" type="text" placeholder="Email" name="email" required>
+
+      <br>
+      <br>
+      <label for="dni"><b>DNI</b></label>
+      <input id="dni" type="number" placeholder="Documento" name="dni" required>
+ 
+      <label for="telefono"><b>Telefono</b></label>
+      <input id="telefono" type="number" placeholder="Telefono celular" name="telefono" required>
+ 
+      <label for="nombre"><b>Nombre</b></label>
+      <input id="nombre" type="text" placeholder="Nombre o nombres" name="nombre" required>
+ 
+      <label for="apellido"><b>Apellido</b></label>
+      <input id="apellido" type="text" placeholder="Apellido o apellidos" name="apellido" required>
+ 
+      <label for="direccion"><b>Direccion</b></label>
+      <input id="direccion" type="text" placeholder="Direccion particular" name="direccion" required>
+ 
+      <label for="localidad"><b>Localidad</b></label>
+      <input id="localidad" type="text" placeholder="Localidad" name="localidad" required>     
+  
+      <label for="psw"><b>Contrasena</b></label>
+      <input id="psw" type="password" placeholder="Crear Contrasena" name="psw" required>
+  
+      <label for="area"><b>Area</b></label>
+      <input id="area" type="text" placeholder="Area en la empresa" name="area" required>
+ 
+      <label for="fecha-ingreso"><b>Fecha ingreso</b></label>
+      <br>
+      <input id="fecha-ingreso" type="date">
+      <br>
+      <br>
+      
+      <p>Al crear una cuenta, está aceptando nuestros Términos y Condiciones</p>
+  
+      <div class="clearfix">
+        <a href="../index.html">
+          <button type="button" class="cancelbtn">Cancelar</button>
+        </a>
+        
+        <button id="fetch-button" type="button" class="signupbtn">Registrarse</button>
+      </div>
+    </div>
+  </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../js/scriptSingup.js"></script>
+</body>
+</html>

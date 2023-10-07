@@ -25,9 +25,16 @@ create table jefe
 Id_Jefe int,
 Id_Empleado int,
 PRIMARY KEY(Id_Jefe),
-FOREIGN KEY (dni) REFERENCES empleados (dni)
+FOREIGN KEY (Id_Empleado) REFERENCES empleados (dni)
 );
 
+
+
+insert into jefe values (0, 0);
+
+select *
+from jefe
+where Id_Empleado = 0;
 
 create table vacaciones
 (

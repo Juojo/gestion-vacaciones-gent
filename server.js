@@ -36,19 +36,39 @@ app.post('/api/crearUsuario', (req, res) => {
 }); 
 
 app.get('/api/selectLogin', (req, res) => {
-  usuario = req.body;
-  const query = `select * from empleados where dni = ${usuario.dni} and contrasena = "${usuario.contrasena}";`;
+  const query = `select * from empleados where dni = ${req.query.dni} and contrasena = "${req.query.password}";`;
 
     connection.query(query,
       function(err, results) {
           if (err) {
               console.log('Error: ', err);
           } else {
-            res.send(results);
             if (results.length === 0) {
               console.log("No existe el usuario o la contraseña es incorrecta");
+              res.send({ resultados: results, estado: "denegado" });
             } else {
-              console.log("Bienvenido " + usuario.dni);
+              console.log("Bienvenido " + req.query.dni);
+              res.send({ resultados: results, estado: "aceptado" });
+            }
+          }
+      }
+    );
+});
+
+app.get('/api/esJefe', (req, res) => {
+  const query = `select * from jefe where Id_Empleado = ${req.query.empleado};`;
+
+    connection.query(query,
+      function(err, results) {
+          if (err) {
+              console.log('Error: ', err);
+          } else {
+            if (results.length === 0) {
+              console.log("El usuario no es jefe");
+              res.send({ resultados: results, estado: "denegado" });
+            } else {
+              console.log("El usuario " + req.query.dni + " es jefe");
+              res.send({ resultados: results, estado: "aceptado" });
             }
           }
       }
