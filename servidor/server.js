@@ -1,3 +1,5 @@
+// Se debe correr la base de datos antes de ejecutar el servidor (schema en ./db/bdvacas.sql)
+
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;

@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => {
                 console.error("Error al iniciar sesión:", error);
-                alert("Error al iniciar sesión:", error);
+                alert("Error al iniciar sesión, asegurate de que el servidor y la base de datos esten siendo ejecutadas.");
                 // Puedes mostrar un mensaje de error en tu página si lo deseas
             });
     });
