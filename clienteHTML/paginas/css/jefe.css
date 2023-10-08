@@ -61,7 +61,7 @@ body{
   font-size: 12px;
 }
 
-.main-box form a {
+.main-box form .boton {
   justify-content: center;
   font-weight: bold;
   position: relative;
@@ -72,14 +72,13 @@ body{
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin: 0 18px 40px;
   letter-spacing: 4px;
-  width: 120px;
-  height: 20px;
+  width: 180px;
+  height: 40px;
   text-align: center;
 }
 
-.main-box a:hover {
+.main-box .boton:hover {
   background: #03e9f4;
   color: #fff;
   border-radius: 5px;
@@ -89,7 +88,7 @@ body{
               0 0 100px #03e9f4;
 }
 
-.main-box a span {
+.main-box .boton span {
   position: absolute;
   display: block;
 }
@@ -103,4 +102,15 @@ body{
   padding: 15px;
   border: none;
   background: #f1f1f1;
+}
+
+.boton {
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.button-box {
+  display: flex;
+  justify-content: space-between;
 }

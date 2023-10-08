@@ -29,5 +29,5 @@ $ cd servidor
 <br>
 **3.2**: Correr el servidor
 ```
-$ npm start
+$ npm run dev
 ```

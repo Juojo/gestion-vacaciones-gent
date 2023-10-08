@@ -9,35 +9,26 @@
 <body>
     <div class="main-box">
         <h2>Gestion De Vacaciones (JEFES)</h2>
+        <p style="color: #fff;">Ingrese el DNI del empleado al que le quiere evaluar su petición de vacaciones:</p>
+        <input id="dni" type="number" placeholder="DNI del empleado" name="dni" required>
+        <button id="fetch-dni" type="button" class="signupbtn">Enviar</button>
+        <br>
+        <br>
+        <br>
         <form>
             <div>
-                <input type="date" class="calendar-box">
-                <input type="date" class="calendar-box">
+                <input id="fecha-inicio" type="date" class="calendar-box" disabled>
+                <input id="fecha-final" type="date" class="calendar-box" disabled>
             </div>    
             <div class="Button-box">
-                <a class="" href="" style="color: green;">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  Confirmar
-                </a>        
-                <a class="" href="" style="color: red;">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Rechazar
-                </a>
-                <a class="" href="" style="color: yellow;">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Modificar
-                </a>
+                <button id="confirmar" type="button" class="boton" style="background-color: green;" >Confirmar</button>
+                <button class="boton" style="background-color: red; " >Rechazar</button>
+                <button id="modificar" type="button" class="boton" style="background-color: yellow; color: black " >Modificar</button>
             </div>
         </form>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/scriptJefe.js"></script>
 </body>
 </html>

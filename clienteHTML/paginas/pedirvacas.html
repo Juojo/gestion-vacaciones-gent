@@ -10,12 +10,13 @@
     <div class="main-box">
         <h2>Pedido de Vacaciones (USUARIOS)</h2>
         <form>
+            <input id="input-dni" type="number" placeholder="Ingrese aqui su DNI">
             <div>
-                <input type="date" class="calendar-box">
-                <input type="date" class="calendar-box">
+                <input id="FechaI" type="date" class="calendar-box">
+                <input id="FechaF" type="date" class="calendar-box">
             </div>    
             <div class="Button-box">
-                <a class="" href="" style="color: rgb(15, 233, 15);">
+                <a  id="enviar" class="" href="" style="color: rgb(15, 233, 15);">
                   <span></span>
                   <span></span>
                   <span></span>
@@ -26,5 +27,8 @@
             </div>
         </form>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/scriptPedir.js"></script>
 </body>
 </html>
