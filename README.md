@@ -11,7 +11,7 @@
 
 ## ¿Como puedo ejecutar el proyecto?
 
-1. Abrir la pagina hosteada [acá](www.google.com) o el archivo que se encuentra en `cliente/index.html`
+1. Abrir la pagina que se encuentra en `cliente/index.html`
 
 2. Correr la base de datos mySql
 <br>
