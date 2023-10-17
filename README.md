@@ -14,20 +14,20 @@
 1. Abrir la pagina que se encuentra en `cliente/index.html`
 
 2. Correr la base de datos mySql
-<br>
-**2.1**: El usuario debe coincidir con `servidor/db/config`
-<br>
-**2.2**: La base de datos se encuentra en `servidor/db/db.sql`
+
+> 2.1: El usuario debe coincidir con `servidor/db/config`
+
+> 2.2: La base de datos se encuentra en `servidor/db/db.sql`
 
 3. Correr el servidor (backend)
-<br>
-**3.1**: Moverse desde el root al servidor
+
+> 3.1: Moverse desde el root al servidor
+
 ```
 $ cd servidor
 ```
-.
-<br>
-**3.2**: Correr el servidor
+
+> 3.2: Correr el servidor
 ```
 $ npm run dev
 ```
