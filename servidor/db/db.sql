@@ -40,13 +40,3 @@ Id_Empleado int,
 PRIMARY KEY (Id_Vacacion),
 FOREIGN KEY (Id_Empleado) REFERENCES empleados (dni)
 );
-
-insert into vacaciones (FechaI, FechaF, Id_Empleado) values ("2023-09-01", "2023-09-10", 1);
-
--- Ver una vacacion sin aprobar
-select * from vacaciones where Id_Empleado = 1 and Estado = false limit 1;
-
--- Aprobar vacacion
-UPDATE vacaciones
-SET estado = true
-WHERE Id_Vacacion = 1;
