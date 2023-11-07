@@ -1,0 +1,17 @@
+{
+  "name": "googleformsapi",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "google-auth-library": "^8.9.0",
+    "google-spreadsheet": "^4.1.0",
+    "googleapis": "^39.2.0"
+  }
+}
