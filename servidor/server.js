@@ -57,6 +57,13 @@ app.get('/api/selectLogin', (req, res) => {
     );
 });
 
+app.get('/api/matrizEstaOcupado', (req, res) => {
+  const matrizEstaOcupado = require('../programaVacaciones/main')
+  //console.log(matrizEstaOcupado);
+
+  res.json(matrizEstaOcupado);
+})
+
 // app.get('/api/esJefe', (req, res) => {
 //   const query = `select * from jefe where Id_Empleado = ${req.query.empleado};`;
 
