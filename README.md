@@ -27,7 +27,12 @@
 $ cd servidor
 ```
 
-> 3.2: Correr el servidor
+> 3.2: Descargar las dependecias necesarias
+```
+$ npm run dev
+```
+
+> 3.3: Correr el servidor
 ```
 $ npm run dev
 ```
