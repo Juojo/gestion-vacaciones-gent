@@ -17,7 +17,7 @@
 
 > 2.1: El usuario debe coincidir con `servidor/db/config`
 
-> 2.2: La base de datos se encuentra en `servidor/db/db.sql`
+> 2.2: La base de datos se encuentra en `servidor/db/dbNueva.sql`
 
 3. Correr el servidor (backend)
 
@@ -27,7 +27,12 @@
 $ cd servidor
 ```
 
-> 3.2: Correr el servidor
+> 3.2: Descargar las dependecias necesarias
+```
+$ npm run dev
+```
+
+> 3.3: Correr el servidor
 ```
 $ npm run dev
 ```
