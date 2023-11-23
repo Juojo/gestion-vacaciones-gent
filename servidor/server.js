@@ -49,8 +49,21 @@ app.get('/api/selectLogin', (req, res) => {
               console.log("No existe el usuario o la contraseña es incorrecta");
               res.send({ resultados: results, estado: "denegado" });
             } else {
-              console.log("Bienvenido " + req.query.dni);
-              res.send({ resultados: results, estado: "aceptado" });
+              
+              connection.query(`select area from empleados where dni = ${req.query.dni} and contrasena = "${req.query.password}";`,
+                function(err, results2) {
+                    if (err) {
+                        console.log('Error: ', err);
+                    } else {
+                      const area = results2[0].area;
+                      console.log(area);
+                      console.log("Bienvenido " + req.query.dni);
+                      res.send({ area: area, estado: "aceptado" });
+                    }
+                }
+              );
+
+              
             }
           }
       }

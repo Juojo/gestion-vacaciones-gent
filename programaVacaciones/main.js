@@ -1,21 +1,21 @@
 const fs = require('fs');
 
-const estaOcupado = Array(12).fill().map(() => Array(4).fill(-1));
+const estaOcupado = Array(12).fill().map(() => Array(4).fill("-"));
 //console.log(estaOcupado);
 
-fs.readFile('../programaVacaciones/vacaciones/datos_Jefe.json', 'utf8', (err, data) => {
+fs.readFile('../crearJSON/datos_Jefe.json', 'utf8', (err, data) => {
     if (err) console.log(err);
 
     const datosJefe = JSON.parse(data);
     verificar(datosJefe);
 
-    fs.readFile('../programaVacaciones/vacaciones/datos_SubJefe.json', 'utf8', (err, data) => {
+    fs.readFile('../crearJSON/datos_Jefe.json', 'utf8', (err, data) => {
         if (err) console.log(err);
 
         const datosSubJefe = JSON.parse(data);
         verificar(datosSubJefe);
 
-        fs.readFile('../programaVacaciones/vacaciones/datos_Empleado.json', 'utf8', (err, data) => {
+        fs.readFile('../crearJSON/datos_Jefe.json', 'utf8', (err, data) => {
             if (err) console.log(err);
     
             const datosEmpleados = JSON.parse(data);
@@ -47,7 +47,7 @@ function verificar(datos) {
             let disponibles = true;
 
             for (const semana of semanas) {
-                if (estaOcupado[mes - 1][semana - 1] !== -1) {
+                if (estaOcupado[mes - 1][semana - 1] !== "-") {
                     disponibles = false;
                     break;
                 }

@@ -18,16 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(response.data.estado);
                 if (response.data.estado === "aceptado") {
                     console.log("Inicio de sesión exitoso:", response.data);
-                    axios.get(`http://localhost:5000/api/esJefe?empleado=${dni}`, userData)
-                        .then(response => {
-                            if (response.data.area === "empleado") {
-                                window.open("https://docs.google.com/forms/d/e/1FAIpQLSeLB_zL6l4tUGSc9UlN4F7VEOiuKTF3uV96grW-2u3_3XQDZg/viewform");
-                            } else if (response.data.area === "subjefe") {
-                                windows.open("https://docs.google.com/forms/d/e/1FAIpQLScN5B4FpmINhq1raIZtGBg7WqceY9Q0lUfsHaNWl9-QaBvD2Q/viewform");
-                            } else if (response.data.area === "jefe") {
-                                window.open("https://docs.google.com/forms/d/e/1FAIpQLSdgr-A3MUcZJgS5vhZXVoJjfxSnqfv5CuPQ_D5c6azLwd1A3g/viewform");
-                            }
-                        })
+                    if (response.data.area === "empleado") {
+                        window.open("https://docs.google.com/forms/d/e/1FAIpQLSeLB_zL6l4tUGSc9UlN4F7VEOiuKTF3uV96grW-2u3_3XQDZg/viewform");
+                    } else if (response.data.area === "subjefe") {
+                        window.open("https://docs.google.com/forms/d/e/1FAIpQLScN5B4FpmINhq1raIZtGBg7WqceY9Q0lUfsHaNWl9-QaBvD2Q/viewform");
+                    } else if (response.data.area === "jefe") {
+                        window.open("https://docs.google.com/forms/d/e/1FAIpQLSdgr-A3MUcZJgS5vhZXVoJjfxSnqfv5CuPQ_D5c6azLwd1A3g/viewform");
+                    }
                 } else {
                     alert("El usuario no existe o la contraseña ingresada es incorrecta.")
                 }
