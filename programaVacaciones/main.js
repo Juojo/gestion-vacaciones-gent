@@ -9,13 +9,13 @@ fs.readFile('../crearJSON/datos_Jefe.json', 'utf8', (err, data) => {
     const datosJefe = JSON.parse(data);
     verificar(datosJefe);
 
-    fs.readFile('../crearJSON/datos_Jefe.json', 'utf8', (err, data) => {
+    fs.readFile('../crearJSON/datos_SubJefe.json', 'utf8', (err, data) => {
         if (err) console.log(err);
 
         const datosSubJefe = JSON.parse(data);
         verificar(datosSubJefe);
 
-        fs.readFile('../crearJSON/datos_Jefe.json', 'utf8', (err, data) => {
+        fs.readFile('../crearJSON/datos_Empleado.json', 'utf8', (err, data) => {
             if (err) console.log(err);
     
             const datosEmpleados = JSON.parse(data);

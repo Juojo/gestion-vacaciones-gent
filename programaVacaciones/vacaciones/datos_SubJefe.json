@@ -1,15 +1,13 @@
 [
-    {
-        "Marca temporal": 45246.49065740741,
-        "Dirección de correo electrónico": "tomasmusicmann07@gmail.com",
-        "Nombre": "SUB JEFE Tomas",
-        "Apellido": "Musicmann",
-        "DNI": 46443074,
-        "MesOpción1": 1,
-        "SemanaOpción1": "2, 3",
-        "MesOpción2": 2,
-        "MesOpción3": 2,
-        "SemanaOpción2": "1, 2",
-        "SemanaOpción3": "1, 2"
-    }
+  {
+    "Nombre": "Juan Cruz",
+    "Apellido": "Manfredi",
+    "DNI": 6,
+    "MesOpción1": 3,
+    "MesOpción2": 45019,
+    "MesOpción3": 12,
+    "SemanaOpción1": "2, 3",
+    "SemanaOpción2": "1, 4",
+    "SemanaOpción3": "2, 3"
+  }
 ]
